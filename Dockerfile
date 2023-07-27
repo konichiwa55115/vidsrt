@@ -1,7 +1,7 @@
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
 RUN apt install git curl python3-pip -y
-RUN -v ; curl https://rclone.org/install.sh | bash
+RUN curl https://rclone.org/install.sh && bash install.sh
 COPY rclone.conf /root/.config/rclone/
 RUN apt install dos2unix
 RUN pip3 install -U pip
