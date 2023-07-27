@@ -9,6 +9,6 @@ COPY start.sh /start.sh
 COPY requirements.txt /requirements.txt
 RUN cd /
 RUN pip3 install -U -r requirements.txt
-WORKDIR /LazyDeveloper
+WORKDIR /kony
 RUN dos2unix /start.sh 
 CMD ["/bin/bash", "/start.sh"]
