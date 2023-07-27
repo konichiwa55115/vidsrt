@@ -1,9 +1,9 @@
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
-RUN apt install git curl python3-pip ffmpeg -y
-RUN apt-get install -y libavfilter-dev
+RUN apt install git curl python3-pip -y
+RUN -v ; curl https://rclone.org/install.sh | bash
+COPY rclone.conf /root/.config/rclone/
 RUN apt install dos2unix
-RUN apt-get install yasm libvpx. libx264. -y
 RUN pip3 install -U pip
 COPY start.sh /start.sh
 COPY requirements.txt /requirements.txt
